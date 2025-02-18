@@ -30,11 +30,10 @@ public class SceneCanvas extends JComponent {
 
    
     public void updateScene() {
-    // Moving the first circle (cloud) for demonstration
     Circle e1 = (Circle) DrawingObjects.get(0);  
     e1.adjustX(5);  
 
-    // If the circle moves out of bounds, reset its position
+    
     if (e1.getX() > this.getWidth()) {
         e1.adjustX(-this.getWidth());  
     }
