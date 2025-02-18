@@ -30,10 +30,6 @@ public class SceneCanvas extends JComponent {
 
    
     public void updateScene() {
-        Circle cloud = (Circle)DrawingObjects.get(0);
-        cloud.x += 5;
-        if (cloud.x > this.getWidth()) {
-            cloud.x = 0;  
         }
 
         
