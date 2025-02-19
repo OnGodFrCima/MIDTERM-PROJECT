@@ -22,9 +22,11 @@ public class SceneCanvas extends JComponent {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+         Graphics2D g2D = (Graphics2D) g; 
+
         
         for (DrawingObject obj :DrawingObjects) {
-            obj.draw(g);
+            obj.draw(g2D);
         }
     }
 
