@@ -5,6 +5,7 @@ public class Circle implements DrawingObject{
 
     private double xPos, yPos, size;
     private Color color;
+    private double rotationAngle = 0;
     
     public Circle(double xPos, double yPos, double size, Color color){
         this.xPos = xPos;
@@ -19,6 +20,8 @@ public class Circle implements DrawingObject{
         g2D.setColor(color); 
         g2D.fill(r); 
 
+        g2D.rotate(Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
+
     }
 
     public void adjustX(double distance){
@@ -31,5 +34,9 @@ public class Circle implements DrawingObject{
 
     public double getX(){
         return xPos;
+    }
+
+     public void rotate(double angle) {
+        this.rotationAngle += angle; 
     }
 }
