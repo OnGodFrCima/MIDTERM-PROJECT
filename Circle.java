@@ -7,11 +7,12 @@ public class Circle implements DrawingObject{
     private Color color;
     private double rotationAngle = 0;
     
-    public Circle(double xPos, double yPos, double size, Color color){
+    public Circle(double xPos, double yPos, double size, Color color, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
         this.size = size;
         this.color = color;
+        this.rotationAngle = rotationAngle;
     }
 
     //size is same since square naman
@@ -19,8 +20,10 @@ public class Circle implements DrawingObject{
         Ellipse2D.Double r = new Ellipse2D.Double(xPos, yPos, size, size);
         g2D.setColor(color); 
         g2D.fill(r); 
-        g2D.rotate(-Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
+
         g2D.rotate(Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
+        
+        g2D.rotate(-Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
 
     }
 
@@ -36,7 +39,7 @@ public class Circle implements DrawingObject{
         return xPos;
     }
 
-     public void rotate(double angle) {
-        this.rotationAngle += angle; 
-    }
+    public void rotate(double angle) {
+        this.rotationAngle += angle;
+      }
 }
