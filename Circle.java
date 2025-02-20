@@ -19,7 +19,7 @@ public class Circle implements DrawingObject{
         Ellipse2D.Double r = new Ellipse2D.Double(xPos, yPos, size, size);
         g2D.setColor(color); 
         g2D.fill(r); 
-
+        g2D.rotate(-Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
         g2D.rotate(Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
 
     }
