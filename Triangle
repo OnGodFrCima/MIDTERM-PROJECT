@@ -1,0 +1,43 @@
+import java.awt.*;
+
+public class Triangle implements DrawingObject {
+    private double xPos, yPos, size;
+    private Color color;
+
+    
+    public Triangle(double xPos, double yPos, double size, Color color) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.size = size;
+        this.color = color;
+    }
+
+
+    public void draw(Graphics2D g2D) {
+        
+        
+        
+        int[] xPoints = {(int) xPos, (int) (xPos + size), (int) (xPos + size / 2)};
+        int[] yPoints = {(int) yPos, (int) yPos, (int) (yPos - size)};
+        
+        Polygon triangle = new Polygon(xPoints, yPoints, 3);
+        g2D.setColor(color);
+        g2D.fill(triangle);  
+    }
+
+ 
+   
+    public void adjustX(double distance) {
+        xPos += distance;
+    }
+
+    
+    public void adjustSize(double newSize) {
+        size += newSize;
+    }
+
+    
+    public double getX() {
+        return xPos;
+    }
+}
