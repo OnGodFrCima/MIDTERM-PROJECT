@@ -1,45 +1,50 @@
 import java.awt.*;
 import java.awt.geom.*;
 
-public class Circle implements DrawingObject{
+public class Circle implements DrawingObject {
 
-    private double xPos, yPos, size;
+    private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-    
-    public Circle(double xPos, double yPos, double size, Color color, double rotationAngle){
+
+    public Circle(double xPos, double yPos, double width, double height, Color color, double rotationAngle) {
         this.xPos = xPos;
         this.yPos = yPos;
-        this.size = size;
+        this.width = width;
+        this.height = height;
         this.color = color;
         this.rotationAngle = rotationAngle;
     }
 
-    //size is same since square naman
-    public void draw(Graphics2D g2D){
-        Ellipse2D.Double r = new Ellipse2D.Double(xPos, yPos, size, size);
-        g2D.setColor(color); 
-        g2D.fill(r); 
-
-        g2D.rotate(Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
-        
-        g2D.rotate(-Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
-
+    @Override
+    public void draw(Graphics2D g2D) {
+        Ellipse2D.Double ellipse = new Ellipse2D.Double(xPos, yPos, width, height);
+        g2D.setColor(color);
+        g2D.rotate(Math.toRadians(rotationAngle), xPos + width / 2, yPos + height / 2);
+        g2D.fill(ellipse);
+        g2D.rotate(-Math.toRadians(rotationAngle), xPos + width / 2, yPos + height / 2);
     }
 
-    public void adjustX(double distance){
+    @Override
+    public void adjustX(double distance) {
         xPos += distance;
-    }   
-
-    public void adjustSize(double newSize){
-        size += newSize;
     }
 
-    public double getX(){
+    @Override
+    public void adjustSize(double newSize) {
+        width += newSize;
+        height += newSize;
+    }
+
+    @Override
+    public double getX() {
         return xPos;
     }
 
+    @Override
     public void rotate(double angle) {
         this.rotationAngle += angle;
-      }
+    }
 }
+
+   

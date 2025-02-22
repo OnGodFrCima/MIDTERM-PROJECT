@@ -11,13 +11,13 @@ public class SceneCanvas extends JComponent {
         this.DrawingObjects = new ArrayList<>();
 
         
-       DrawingObjects.add(new Circle(100, 100, 50, Color.CYAN, 0));  
-       DrawingObjects.add(new Circle(200, 200, 60, Color.GREEN, 0)); 
+       DrawingObjects.add(new Circle(100, 100, 50,50, Color.CYAN, 0));  
+       DrawingObjects.add(new Circle(200, 200, 60,60, Color.GREEN, 0)); 
        DrawingObjects.add(new Rectangle(190, 250, 20, 50, Color.BLACK, 40)); 
-       DrawingObjects.add(new Circle(500, 150, 40, Color.YELLOW, 0)); 
+       DrawingObjects.add(new Circle(500, 150, 40,40, Color.YELLOW, 0)); 
        DrawingObjects.add(new Triangle(600, 140, 40, Color.RED, 90)); 
+       DrawingObjects.add(new Cymbal(600, 140, 40)); 
     }
-
     
     @Override
     protected void paintComponent(Graphics g) {
@@ -47,6 +47,9 @@ public class SceneCanvas extends JComponent {
 }
 
    
+      
+
+    
       
    
       

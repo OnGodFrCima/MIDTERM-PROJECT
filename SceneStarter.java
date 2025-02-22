@@ -1,6 +1,6 @@
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class SceneStarter{
 
@@ -27,4 +27,3 @@ public class SceneStarter{
 
     
     
-}
