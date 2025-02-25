@@ -39,6 +39,10 @@ public class Triangle implements DrawingObject {
         xPos += distance;
     }
 
+    public void adjustY(double distance) {
+        yPos += distance;
+    }
+
     
     public void adjustSize(double newSize) {
         size += newSize;
