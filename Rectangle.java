@@ -14,7 +14,6 @@ public class Rectangle implements DrawingObject {
         this.height = height;
         this.color = color;
         this.rotationAngle = rotationAngle;
-         
     }
 
 
@@ -32,6 +31,10 @@ public class Rectangle implements DrawingObject {
   
     public void adjustX(double distance) {
         xPos += distance; 
+    }
+
+    public void adjustY(double distance) {
+        yPos += distance; 
     }
 
   
