@@ -30,6 +30,10 @@ public class Circle implements DrawingObject {
         xPos += distance;
     }
 
+    public void adjustY(double distance) {
+        yPos += distance;
+    }
+
     @Override
     public void adjustSize(double newSize) {
         width += newSize;
