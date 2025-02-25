@@ -99,4 +99,8 @@ public class Mic implements DrawingObject{
     public void rotate(double angle) {
         this.rotationAngle += angle;
     }
+    
+    public boolean contains(int mouseX, int mouseY) {
+    return mouseX >= xPos && mouseX <= xPos + 50 && mouseY >= yPos && mouseY <= yPos + 150;
+}
 }

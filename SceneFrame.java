@@ -1,28 +1,22 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class SceneFrame extends JFrame{
+public class SceneFrame extends JFrame {
+    private SceneCanvas canvas;
+    private AudioPlayerWithButton player;
 
-    private SceneCanvas test;
+    public SceneFrame() {
+        setTitle("Midterm Project - Cimafranca - Yap.");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
-    public SceneFrame(){
-        setUpGUI();
+        player = new AudioPlayerWithButton("Heaven.wav");  
+        canvas = new SceneCanvas(player);
+        add(canvas, BorderLayout.CENTER);
+        
+
+        pack();
+        setVisible(true);
     }
+}
 
-public void setUpGUI(){
-
-    setTitle("Midterm Project - Cimafranca - Yap.");
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLayout(new BorderLayout());  
-
-    test = new SceneCanvas();  // Initialize SceneCanvas
-    add(test, BorderLayout.CENTER);
-
-    // JButton updateButton = new JButton("Update Scene");
-    // updateButton.addActionListener(e -> test.updateScene());
-    // add(updateButton, BorderLayout.SOUTH);
-    pack();
-
-    setVisible(true);
-    }
-}   

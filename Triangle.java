@@ -1,0 +1,56 @@
+import java.awt.*;
+
+public class Triangle implements DrawingObject {
+    private double xPos, yPos, size;
+    private Color color;
+    private double rotationAngle = 0;
+
+    
+    public Triangle(double xPos, double yPos, double size, Color color, double rotationAngle) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.size = size;
+        this.color = color;
+        this.rotationAngle = rotationAngle;
+    }
+
+   
+    @Override
+    public void draw(Graphics2D g2D) {
+        g2D.rotate(Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
+
+        int[] xPoints = {(int) xPos, (int) (xPos + size), (int) (xPos + size / 2)};
+        int[] yPoints = {(int) yPos, (int) yPos, (int) (yPos - size)};
+
+        Polygon triangle = new Polygon(xPoints, yPoints, 3);
+        g2D.setColor(color);
+        g2D.fill(triangle);
+
+        g2D.rotate(-Math.toRadians(rotationAngle), xPos + size / 2, yPos + size / 2);
+    }
+
+   
+    @Override
+    public void adjustX(double distance) {
+        xPos += distance;
+    }
+
+    @Override
+    public void adjustY(double distance) {
+        yPos += distance;  // <-- This is the key fix!
+    }
+
+    @Override
+    public void adjustSize(double newSize) {
+        size += newSize;
+    }
+
+    // Additional Methods
+    public double getX() {
+        return xPos;
+    }
+
+    public void rotate(double angle) {
+        this.rotationAngle += angle;
+    }
+}
