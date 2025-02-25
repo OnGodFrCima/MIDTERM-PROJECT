@@ -1,18 +1,21 @@
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 
 public class Cymbal implements DrawingObject {
     private double x, y, width, height, angle;
 
-    public Cymbal(double x, double y, double width) {
+    public Cymbal(double x, double y, double width, double angle) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = width / 6; // Adjusted to make the shape flatter
-        this.angle = 0;
+        this.angle = angle;
     }
 
     @Override
     public void draw(Graphics2D g2d) {
+        AffineTransform reset = g2d.getTransform();
+        
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.rotate(Math.toRadians(angle), x + width / 2, y + height / 2);
 
@@ -32,11 +35,17 @@ public class Cymbal implements DrawingObject {
 
         g2d.setColor(Color.BLACK);
         g2d.drawArc((int) (x + width / 3), (int) (y + height / 15), (int) (width / 3), (int) (height / 2.5), 0, 180);
+    
+        g2d.setTransform(reset);
     }
 
     @Override
     public void adjustX(double distance) {
         this.x += distance;
+    }
+
+    public void adjustY(double distance) {
+        this.y += distance; 
     }
 
     @Override
@@ -55,5 +64,4 @@ public class Cymbal implements DrawingObject {
         this.angle = angle;
     }
 }
-
 
