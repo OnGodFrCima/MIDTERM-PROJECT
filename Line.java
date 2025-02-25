@@ -31,6 +31,11 @@ public class Line implements DrawingObject {
         this.xPos2 += distance;
     }
 
+    public void adjustY(double distance) {
+        this.yPos1 += distance;
+        this.yPos2 += distance;
+    }
+
     
     @Override
     public void adjustSize(double newSize) {
