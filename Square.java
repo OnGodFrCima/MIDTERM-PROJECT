@@ -3,7 +3,7 @@ import java.awt.geom.Rectangle2D;
 
 public class Square implements DrawingObject{
 
-    private double xPos, yPos, size;
+    private double xPos, yPos, size, rotationAngle;
     private Color color;
     
     public Square(double xPos, double yPos, double size, Color color){
@@ -11,6 +11,7 @@ public class Square implements DrawingObject{
         this.yPos = yPos;
         this.size = size;
         this.color = color;
+        this.rotationAngle = rotationAngle;
     }
 
     //size is same since square namanS
@@ -23,6 +24,10 @@ public class Square implements DrawingObject{
         xPos += distance;
     }   
 
+    public void adjustY(double distance){
+        yPos += distance;
+    }   
+
     public void adjustSize(double newSize){
         size = newSize;
     }
@@ -31,4 +36,7 @@ public class Square implements DrawingObject{
         return xPos;
     }
 
+    public void rotate(double angle) {
+        this.rotationAngle += angle;
+      }
 }
