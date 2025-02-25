@@ -10,13 +10,53 @@ public class SceneCanvas extends JComponent {
         this.setPreferredSize(new Dimension(800, 600));
         this.DrawingObjects = new ArrayList<>();
 
-        
-       DrawingObjects.add(new Circle(100, 100, 50,50, Color.CYAN, 0));  
-       DrawingObjects.add(new Circle(200, 200, 60,60, Color.GREEN, 0)); 
-       DrawingObjects.add(new Rectangle(190, 250, 20, 50, Color.BLACK, 40)); 
-       DrawingObjects.add(new Circle(500, 150, 40,40, Color.YELLOW, 0)); 
-       DrawingObjects.add(new Triangle(600, 140, 40, Color.RED, 90)); 
-       DrawingObjects.add(new Cymbal(600, 140, 40)); 
+       DrawingObjects.add(new Background(398.9, 117.9, 50, 100, 0));
+
+       Tiles tiles1 = new Tiles(0, 0, 0);
+       tiles1.adjustX(0);
+       DrawingObjects.add(tiles1);
+
+       Tiles tiles2 = new Tiles(0, 0, 0);
+       tiles2.adjustX(255);
+       DrawingObjects.add(tiles2);
+
+       Tiles tiles3 = new Tiles(0, 0, 0);
+       tiles3.adjustX(555);
+       DrawingObjects.add(tiles3);
+
+       DrawingObjects.add(new BackgroundStage(0, 0, 0, 0, 0));
+
+       DrawingObjects.add(new Cymbal(234, 78.2, 40, 0)); 
+       
+       DrawingObjects.add(new Guitar(0, 0, 0));
+
+       DrawingObjects.add(new Drums(0, 0, 0));
+
+       DrawingObjects.add(new Table(0,0,0));
+
+
+       Table table1 = new Table(0,0,0);
+       table1.adjustX(266.4);
+       table1.adjustY(12.6);
+       DrawingObjects.add(table1);
+
+       Table table2 = new Table(0,0,0);
+       table2.adjustX(109.4);
+       table2.adjustY(149.4);   
+       DrawingObjects.add(table2);
+
+       Table table3 = new Table(0,0,0);
+       table3.adjustX(402.7);
+       table3.adjustY(144.5);
+       DrawingObjects.add(table3);
+
+       Table table4 = new Table(0,0,0);
+       table4.adjustX(546.9);
+       table4.adjustY(10.8);
+       DrawingObjects.add(table4);
+
+       DrawingObjects.add(new Mic(0,0,0));
+
     }
     
     @Override
@@ -24,7 +64,6 @@ public class SceneCanvas extends JComponent {
         super.paintComponent(g);
 
            Graphics2D g2D = (Graphics2D) g; 
-
         
         for (DrawingObject obj :DrawingObjects) {
             obj.draw(g2D);
