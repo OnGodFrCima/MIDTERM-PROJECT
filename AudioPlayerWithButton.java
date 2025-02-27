@@ -5,8 +5,8 @@ import javax.sound.sampled.*;
 import javax.swing.*;
 
 class AudioPlayerWithButton extends JPanel {
+    private static AudioPlayerWithButton currentlyPlaying = null;
     private Clip clip;
-    private boolean isPlaying = false;
     private JButton playPauseButton;
 
     public AudioPlayerWithButton(String filePath) {
@@ -30,15 +30,21 @@ class AudioPlayerWithButton extends JPanel {
     }
 
     public void togglePlayPause() {
-        if (isPlaying) {
-            clip.stop();
-            playPauseButton.setText("Play");
-            isPlaying = false;
-        } else {
+    if (clip != null) {
+            if (currentlyPlaying != null && currentlyPlaying != this) {
+                currentlyPlaying.stopPlayback(); 
+            }
+
+            clip.setFramePosition(0); 
             clip.start();
-            clip.loop(Clip.LOOP_CONTINUOUSLY);
-            playPauseButton.setText("Pause");
-            isPlaying = true;
+            currentlyPlaying = this;
+
+        }
+}
+    public void stopPlayback() {
+        if (clip != null && clip.isRunning()) {
+            clip.stop();
+            currentlyPlaying = null;
         }
     }
 
