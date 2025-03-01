@@ -132,6 +132,15 @@ public class Drums implements DrawingObject{
         midTomOutline4.draw(g2d);
 
         //middle part of the DRUMS idk what theyre called
+        AffineTransform transform4 = new AffineTransform();
+        transform4.rotate(Math.toRadians(-13.9), (int) (296 + 29 / 2), (int) (114.8 + 11 / 2));
+        g2d.setTransform(transform4);
+
+        Circle middlepart8 = new Circle(364.5, 137, 31.4, 15, new Color(0,0,0), 0);
+        middlepart8.draw(g2d);
+
+        g2d.setTransform(reset);
+
         Rectangle middlePartFill1 = new Rectangle(296, 102.4, 5.8, 15.5, new Color(224, 91, 91), -17.9);
         middlePartFill1.draw(g2d);
 
@@ -150,7 +159,6 @@ public class Drums implements DrawingObject{
         Rectangle middlePartFill6 = new Rectangle(319, 111.7, 7.5, 11, new Color(224, 91, 91), -17.9);
         middlePartFill6.draw(g2d);
 
-
         Line middlePart1 = new Line(293.7, 110.8, 293.5, 121.8, new Color(0,0,0), 2);
         middlePart1.draw(g2d);
 
@@ -166,8 +174,21 @@ public class Drums implements DrawingObject{
         Line middlePart5 = new Line(311.5, 97.3, 315, 110.2, new Color(0,0,0), 2);
         middlePart5.draw(g2d);
 
-        Circle middlePart6 = new Circle (298.8, 114.3, 25.2, 8, new Color(255, 223, 194), -14.2);
+        Line middlePart6 = new Line(318.5, 97, 321, 110, new Color(0,0,0), 2);
         middlePart6.draw(g2d);
+
+        Circle middlePart7 = new Circle (298.8, 114.3, 25.2, 8, new Color(255, 223, 194), -14.2);
+        middlePart7.draw(g2d);
+
+        AffineTransform transform2 = new AffineTransform();
+        transform2.rotate(Math.toRadians(-13.9), (int) (296 + 29 / 2), (int) (114.8 + 11 / 2));
+        g2d.setTransform(transform2);
+
+        g2d.setColor(Color.BLACK);
+        g2d.setStroke(new BasicStroke(3));  
+        g2d.drawOval((int)365, (int)159.8, (int)29.3, (int)11.5); 
+        
+        g2d.setTransform(reset); 
 
         //Fix this later tangina 
         // AffineTransform transform1 = new AffineTransform();
@@ -201,9 +222,9 @@ public class Drums implements DrawingObject{
         Line snareOutline6 = new Line(321, 118.4, 321.5, 122.6, new Color(0, 0, 0), 2);
         snareOutline6.draw(g2d);
 
-        AffineTransform transform2 = new AffineTransform();
-        transform2.rotate(Math.toRadians(13.9), 277.4, 112.95);
-        g2d.setTransform(transform2);
+        AffineTransform transform3 = new AffineTransform();
+        transform3.rotate(Math.toRadians(13.9), 277.4, 112.95);
+        g2d.setTransform(transform3);
         
         g2d.setColor(Color.BLACK);
         g2d.setStroke(new BasicStroke(5));  
