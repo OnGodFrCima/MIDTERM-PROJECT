@@ -59,9 +59,12 @@ public class Cymbal implements DrawingObject {
         return this.x;
     }
 
+    public double getY() {
+        return this.y;
+    }
+
     @Override
     public void rotate(double angle) {
         this.angle = angle;
     }
 }
-
