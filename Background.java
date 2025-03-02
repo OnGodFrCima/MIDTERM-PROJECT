@@ -81,6 +81,10 @@ public class Background implements DrawingObject{
         return xPos;
     }
 
+    public double getY() {
+        return yPos;
+    }
+
     @Override
     public void rotate(double angle) {
         this.rotationAngle += angle;
