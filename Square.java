@@ -36,6 +36,10 @@ public class Square implements DrawingObject{
         return xPos;
     }
 
+    public double getY() {
+        return yPos;
+    }
+
     public void rotate(double angle) {
         this.rotationAngle += angle;
       }
