@@ -7,5 +7,6 @@ public interface DrawingObject {
     void adjustY(double distance);
     void adjustSize(double newSize);
     double getX();
+    double getY();
     void rotate(double angle); 
 }
