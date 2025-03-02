@@ -52,6 +52,10 @@ public class Line implements DrawingObject {
         return xPos1;
     }
 
+    public double getY() {
+        return yPos1;
+    }
+
     @Override
     public void rotate(double angle) {
         double radians = Math.toRadians(angle);
