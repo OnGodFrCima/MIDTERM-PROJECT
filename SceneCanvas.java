@@ -368,76 +368,14 @@ class SceneCanvas extends JComponent {
         Cloud e4 = new Cloud(700,22,0,0,0);
         DrawingObjectsOutside.add(e4);
 
-        int randomNumX = (int)(Math.random() * 800);
-        int randomNumY = (int)(Math.random() * 150);
+        int randomNumX;
+        int randomNumY;
 
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 50, randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 150,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 200,randomNumY,0,0,0));
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 50, randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 150,randomNumY,0,0,0));
-
-        randomNumX = (int)(Math.random() * 800);
-        randomNumY = (int)(Math.random() * 150);
-
-        DrawingObjectsOutside.add(new Star(randomNumX + 200,randomNumY,0,0,0));
+        for(int i = 0; i < 40; i++){
+            randomNumX = (int)(Math.random() * 800);
+            randomNumY = (int)(Math.random() * 150);    
+            DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
+        }
 
         
         Timer timer = new Timer(50, e -> { 
