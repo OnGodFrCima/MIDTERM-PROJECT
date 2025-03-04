@@ -26,7 +26,7 @@ public class Circle implements DrawingObject {
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public Circle(double xPos, double yPos, double width, double height, Color color, double rotationAngle) {
         this.xPos = xPos;
         this.yPos = yPos;
@@ -35,7 +35,7 @@ public class Circle implements DrawingObject {
         this.color = color;
         this.rotationAngle = rotationAngle;
     }
-
+/** Refer to the drawing object explanation**/
     @Override
     public void draw(Graphics2D g2D) {
         Ellipse2D.Double ellipse = new Ellipse2D.Double(xPos, yPos, width, height);
