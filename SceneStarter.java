@@ -19,6 +19,7 @@
 
 public class SceneStarter{
 
+/** Creates the scene frame object and starts the whole program**/
     public static void main(String[] args) {
         SceneFrame scene = new SceneFrame();
         scene.setVisible(true);
