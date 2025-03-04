@@ -25,7 +25,7 @@ import java.io.IOException;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
-/** Creates the variables to be used **/
+
 class AudioPlayerWithButton extends JPanel {
     private static AudioPlayerWithButton currentlyPlaying = null;
     private Clip clip;
