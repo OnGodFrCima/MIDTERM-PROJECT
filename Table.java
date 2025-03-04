@@ -26,14 +26,16 @@ public class Table implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/**Unlike the usual constructors, this one only takes x , y, and the rotation of the shape, as the draw method already
+sets up the width and height of the drum shape due to the numerous shapes used in it's creation**/
     public Table(double xPos, double yPos, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/**Composite shape thus necessitating more precise placements of base shapes and their manipulation
+, but the other methods are similar to the explanation in drawing method.**/
     public void draw(Graphics2D g2d){
         
         Rectangle tableLeg1 = new Rectangle(122.2 + xPos, 316.7 + yPos, 7.4, 21, new Color(61, 39, 20), 0);
