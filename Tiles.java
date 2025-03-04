@@ -27,14 +27,16 @@ public class Tiles implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/**Unlike the usual constructors, this one only takes x , y, and the rotation of the shape, as the draw method already
+sets up the width and height of the drum shape due to the numerous shapes used in it's creation**/
     public Tiles(double xPos, double yPos, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/**Use of lines to make the shape and pattern of the tiles necessitates precise coordinates for the lines
+to be positioned, the rest is normal drawingobject methods.**/
     public void draw(Graphics2D g2d){
       //THE FLOOR TILES - HORIZONTAL
 
