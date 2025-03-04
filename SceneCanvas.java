@@ -7,16 +7,15 @@ import javax.swing.*;
 class SceneCanvas extends JComponent {
     private ArrayList<DrawingObject> DrawingObjects;
     private ArrayList<DrawingObject> DrawingObjectsOutside;
-
+    
     private boolean micMoving = true; 
     private boolean guitarMoving = true; 
     private boolean drumsMoving = true; 
     private boolean bassMoving = true;  
     private boolean cymbalMoving1 = true;  
     private boolean cymbalMoving2 = true;  
-    private boolean cymbalMoving3 = true;     
+    private boolean cymbalMoving3 = true;    
    
-
     private AudioPlayerWithButton audioPlayer1; 
     private AudioPlayerWithButton audioPlayer2;
     private AudioPlayerWithButton audioPlayer3;
@@ -24,12 +23,15 @@ class SceneCanvas extends JComponent {
     private AudioPlayerWithButton audioPlayer5;
 
     private Rectangle clickableArea1;
+
     private Rectangle clickableArea2;
     private Rectangle clickableArea3;
     private Rectangle clickableArea4;
     private Rectangle clickableArea5;
     private Rectangle clickableArea6;
     private Rectangle clickableArea7;
+    
+
     private boolean inside = true;
 
     public SceneCanvas(AudioPlayerWithButton audioPlayer1, AudioPlayerWithButton audioPlayer2, AudioPlayerWithButton audioPlayer3, AudioPlayerWithButton audioPlayer4, AudioPlayerWithButton audioPlayer5) {
@@ -76,6 +78,14 @@ class SceneCanvas extends JComponent {
         table4.adjustY(10.8);
         DrawingObjects.add(table4);
 
+        Light lightLeft = new Light(200, 200, 200, new Color(0f,1f,1f,0.3f),0);
+        DrawingObjects.add(lightLeft);
+
+        Light lightRight = new Light(400, 200, 200, new Color(0f,1f,0f,0.3f), 0);
+        DrawingObjects.add(lightRight);
+
+        Light lightMiddle = new Light(300, 150, 200, new Color(1f,0f,0f,0.3f), 0);
+        DrawingObjects.add(lightMiddle);
 
         Mic mic = new Mic(0, 0, 0);
         DrawingObjects.add(mic);
@@ -138,7 +148,7 @@ class SceneCanvas extends JComponent {
                 if (drums.getY() <= 20.4) { 
                     drumsMoving = true; 
                 }
-            }
+            }   
             repaint();
         });
         timerDrum.start();
@@ -228,16 +238,43 @@ class SceneCanvas extends JComponent {
         });
         timerCymbal3.start();
 
+
+        
+        Timer timerLightLeft = new Timer(1000, y -> { 
+            float r = (float) Math.random() * 1;
+            float g = (float) Math.random() * 1;
+            float b = (float) Math.random() * 1;
+            lightLeft.setColor(new Color(r,g,b,0.5f));
+            repaint();
+            });
+            timerLightLeft.start();
+
+            Timer timerLightRight = new Timer(1000, y -> { 
+                float r = (float) Math.random() * 1;
+                float g = (float) Math.random() * 1;
+                float b = (float) Math.random() * 1;
+                lightRight.setColor(new Color(r,g,b,0.5f));
+                repaint();
+            });
+            timerLightRight.start();
+
+            Timer timerLightMiddle = new Timer(1000, y -> { 
+                float r = (float) Math.random() * 1;
+                float g = (float) Math.random() * 1;
+                float b = (float) Math.random() * 1;
+                lightMiddle.setColor(new Color(r,g,b,0.5f));
+                repaint();
+            });
+            timerLightMiddle.start();
+
         
         clickableArea1 = new Rectangle(100, 170, 50, 150, new Color(250, 0, 0, 0), 0);
         clickableArea2 = new Rectangle(360, 170, 50, 150, new Color(0, 0, 0, 0), 0);
         clickableArea3 = new Rectangle(630, 170, 50, 150, new Color(0, 0, 0, 0), 0);
         clickableArea4 = new Rectangle(200, 300, 50, 150, new Color(0, 0, 0, 0), 0);
         clickableArea5 = new Rectangle(500, 300, 50, 150, new Color(0, 0, 0, 0), 0);
-        clickableArea6 = new Rectangle(68.3, 70.8, 64.2, 103.2, new Color(0, 0, 0, 0), 0);
-                                
+        clickableArea6 = new Rectangle(68.3, 70.8, 64.2, 103.2, new Color(0, 0, 0, 0), 0);                                
         clickableArea7 = new Rectangle(349, 471.1, 73.8, 118.4, new Color(0, 0, 0, 0), 0);
-
 
 
         this.addMouseListener(new MouseAdapter() {
@@ -251,7 +288,7 @@ class SceneCanvas extends JComponent {
                     audioPlayer4.stopPlayback();
                     audioPlayer5.stopPlayback();
                     audioPlayer1.togglePlayPause();
-                }            
+                }      
                     
                 if (e.getX() >= clickableArea2.getX() && e.getX() <= clickableArea2.getX() + 50 &&
                     e.getY() >= clickableArea2.getY() && e.getY() <= clickableArea2.getY() + 150 && audioPlayer2 != null) {
@@ -317,15 +354,15 @@ class SceneCanvas extends JComponent {
                         
                         //INSIDE THE RESTAURANT
                         DrawingObjects.add(new Background(398.9, 117.9, 50, 100, 0));
-
+                        
                         DrawingObjects.add(tiles1);
-
 
                         DrawingObjects.add(tiles2);
            
                         DrawingObjects.add(tiles3);
                         
                         DrawingObjects.add(new BackgroundStage(0, 0, 0, 0, 0));
+               
                         DrawingObjects.add(new Table(0, 0, 0));
 
                         DrawingObjects.add(table1);
@@ -335,6 +372,11 @@ class SceneCanvas extends JComponent {
                         DrawingObjects.add(table3);
                 
                         DrawingObjects.add(table4);
+
+                        
+                        DrawingObjects.add(lightLeft);
+                        DrawingObjects.add(lightRight);
+                        DrawingObjects.add(lightMiddle);
                 
                         DrawingObjects.add(mic);
 
@@ -347,15 +389,30 @@ class SceneCanvas extends JComponent {
                         DrawingObjects.add(cymbal3);
 
                         DrawingObjects.add(bass);
+
+
                     }
             }
             });
 
-
     //OUTSIDE THE RESTAURANT
         DrawingObjectsOutside.add(new BackgroundOutside(0, 0, 0, 0, 0));
         DrawingObjectsOutside.add(new HouseOutside(0, 0, 0, 0, 0));
-        DrawingObjectsOutside.add(new Car(300, 530, 150,150, Color.BLUE, Color.BLACK, Color.BLACK));
+
+        Car carOne = new Car(0,0,150,150, Color.BLUE, Color.BLACK, Color.BLACK);
+        DrawingObjectsOutside.add(carOne);
+        
+
+        Timer carOneTimer = new Timer(40, e -> { 
+            carOne.adjustX(6); 
+            System.out.println(carOne.getX());
+            
+            if (carOne.getX() > this.getWidth()) {
+                carOne.adjustX(-this.getWidth()-300); 
+            }
+            repaint(); 
+        });
+        carOneTimer.start();
 
         Cloud e1 = new Cloud(0,0,0,0,0);
         DrawingObjectsOutside.add(e1);
@@ -377,7 +434,6 @@ class SceneCanvas extends JComponent {
             randomNumY = (int)(Math.random() * 150);    
             DrawingObjectsOutside.add(new Star(randomNumX,randomNumY,0,0,0));
         }
-
         
         Timer timer = new Timer(50, e -> { 
             e1.adjustX(5); 
@@ -425,16 +481,16 @@ class SceneCanvas extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2D = (Graphics2D) g;
+        Graphics2D g2d = (Graphics2D) g;
         if (inside == true){
         for (DrawingObject obj : DrawingObjects) {
-            obj.draw(g2D);
+            obj.draw(g2d);
         }
         
     }
         else if (inside != true){
             for (DrawingObject obj : DrawingObjectsOutside) {
-                obj.draw(g2D);
+                obj.draw(g2d);
             }
         }
     }
