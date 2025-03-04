@@ -30,6 +30,7 @@ public class SceneFrame extends JFrame {
     private AudioPlayerWithButton player4;
     private AudioPlayerWithButton player5;
 
+/**Modifies the broder layout of the frame, as well as tie an audioplayer to a specific sound file to be played**/
     public SceneFrame() {
         setTitle("Midterm Project-Cimafranca241172-Yap244883.");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
