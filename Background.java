@@ -1,3 +1,22 @@
+/**
+	This the class for the background of the interior of the bar. It is a composite shape made 
+    of multiple shapes in order to create the image of a bar or restaurant.
+	
+	Ethan L. Yap (244883), Ethan Lawrence Cimafranca (241172)
+	March 05, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
+
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
 
 
 
