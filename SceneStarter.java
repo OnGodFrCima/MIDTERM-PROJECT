@@ -1,5 +1,5 @@
 /**
-    The main class. Starts the whole program. Not much else to add here.
+    The main class. Starts the whole program. Instantiates the scene frame class into an instance. Not much else to add here.
 	
 	Ethan L. Yap (244883), Ethan Lawrence Cimafranca (241172)
 	March 05, 2025
