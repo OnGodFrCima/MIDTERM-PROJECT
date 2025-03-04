@@ -27,17 +27,19 @@ public class Bass implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/**Unlike the usual constructors, this one only takes x , y, and the rotation of the shape, as the draw method already
+sets up the width and height of the drum shape due to the numerous shapes used in it's creation**/
     public Bass(double xPos, double yPos, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** The use of paths to create the outline of the bass is what differentiates this
+draw method from others, but otherwise refer to the drawing object explanation**/
     public void draw(Graphics2D g2d){
 
-        
+
         Path2D.Double BassFill = new Path2D.Double();
         BassFill.moveTo(538.5 + xPos, 99.4 + yPos);
         BassFill.lineTo(508.5 + xPos, 137.5 + yPos);
