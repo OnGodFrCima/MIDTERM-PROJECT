@@ -423,18 +423,31 @@ class SceneCanvas extends JComponent {
 
         Car carOne = new Car(0,0,150,150, Color.BLUE, Color.BLACK, Color.BLACK);
         DrawingObjectsOutside.add(carOne);
+
+        Car carTwo = new Car(0,0,150,150, Color.ORANGE, Color.BLACK, Color.BLACK);
+        DrawingObjectsOutside.add(carTwo);
         
 
         Timer carOneTimer = new Timer(40, e -> { 
-            carOne.adjustX(6); 
-            System.out.println(carOne.getX());
             
+            carOne.adjustX(6); 
+
             if (carOne.getX() > this.getWidth()) {
                 carOne.adjustX(-this.getWidth()-300); 
             }
             repaint(); 
         });
         carOneTimer.start();
+
+        Timer carTwoTimer = new Timer(40, e -> { 
+            carTwo.adjustX(4); 
+
+            if (carTwo.getX() > this.getWidth()) {
+                carTwo.adjustX(-this.getWidth()-300); 
+            }
+            repaint(); 
+        });
+        carTwoTimer.start();
 
         Cloud e1 = new Cloud(0,0,0,0,0);
         DrawingObjectsOutside.add(e1);
