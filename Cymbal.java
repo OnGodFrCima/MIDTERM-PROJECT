@@ -29,7 +29,7 @@ public class Cymbal implements DrawingObject {
         this.x = x;
         this.y = y;
         this.width = width;
-        this.height = width / 6; // Adjusted to make the shape flatter
+        this.height = width / 6; 
         this.angle = angle;
     }
 
