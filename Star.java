@@ -28,7 +28,7 @@ public class Star implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public Star(double xPos, double yPos, double width, double height, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
@@ -37,7 +37,8 @@ public class Star implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** The star is a unique shape, hence we manipulate a path in order to create the shape. Everything
+else is standard to a drawing object.**/
     public void draw(Graphics2D g2d){
 
         Path2D.Double starCurve = new Path2D.Double();
