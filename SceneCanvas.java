@@ -355,6 +355,7 @@ class SceneCanvas extends JComponent {
     //OUTSIDE THE RESTAURANT
         DrawingObjectsOutside.add(new BackgroundOutside(0, 0, 0, 0, 0));
         DrawingObjectsOutside.add(new HouseOutside(0, 0, 0, 0, 0));
+        DrawingObjectsOutside.add(new Car(300, 530, 150,150, Color.BLUE, Color.BLACK, Color.BLACK));
 
         Cloud e1 = new Cloud(0,0,0,0,0);
         DrawingObjectsOutside.add(e1);
