@@ -29,7 +29,7 @@ public class BackgroundStage implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public BackgroundStage(double xPos, double yPos, double width, double height, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
@@ -38,7 +38,9 @@ public class BackgroundStage implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** Mostly similar to other objects, aside from the use of g2d.setTransform which is used to store 
+the original set after the scene change which allows free switching between the two scenes. Other than that the
+rest can be referred to the drawing object.**/
     public void draw(Graphics2D g2d){
 
         AffineTransform reset = g2d.getTransform();
