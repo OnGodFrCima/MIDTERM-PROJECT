@@ -10,7 +10,7 @@ public class SceneFrame extends JFrame {
     private AudioPlayerWithButton player5;
 
     public SceneFrame() {
-        setTitle("Midterm Project-Cimafranca241172-Yap.");
+        setTitle("Midterm Project-Cimafranca241172-Yap244883.");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
