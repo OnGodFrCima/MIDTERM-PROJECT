@@ -1,4 +1,4 @@
-/**
+/**  
 	This class is the Audioplayer with a button. Within this class are the properties of theAudioplayer
         which parses through the folder for selected Audiofiles to play, which is initiated by the push
 	of the button. This is only a class file, which means it still need to be instantiated elsewhere.
@@ -25,11 +25,13 @@ import java.io.IOException;
 import javax.sound.sampled.*;
 import javax.swing.*;
 
+/** Creates the variables to be used **/
 class AudioPlayerWithButton extends JPanel {
     private static AudioPlayerWithButton currentlyPlaying = null;
     private Clip clip;
     private JButton playPauseButton;
 
+/** Dimensions and settings of the button, as well as setting up the file searcher **/
     public AudioPlayerWithButton(String filePath) {
         playPauseButton = new JButton("Play");
         playPauseButton.setPreferredSize(new Dimension(100, 50));
@@ -49,7 +51,7 @@ class AudioPlayerWithButton extends JPanel {
             e.printStackTrace();
         }
     }
-
+/** Awaits the action, which will trigger the music playing and set the audioplayer to currentlyplaying **/
     public void togglePlayPause() {
     if (clip != null) {
             if (currentlyPlaying != null && currentlyPlaying != this) {
@@ -62,13 +64,14 @@ class AudioPlayerWithButton extends JPanel {
 
         }
 }
+/** Stops the audioplayer when another audiplayer is currently playing **/
     public void stopPlayback() {
         if (clip != null && clip.isRunning()) {
             clip.stop();
             currentlyPlaying = null;
         }
     }
-
+/** Returns the button when called **/
     public JButton getPlayPauseButton() {
         return playPauseButton;
     }
