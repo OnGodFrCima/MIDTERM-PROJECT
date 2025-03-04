@@ -27,7 +27,9 @@ public class Line implements DrawingObject {
     private Color color;
     private float thickness;
 
-    // Constructor
+    /**The constructor operates differently due to the nature of the line, as it uses coordinates to plot
+	its points instead of height and width, thus instead of rotation, thickness is here to handle
+	the width of the line**/
     public Line(double xPos1, double yPos1, double xPos2, double yPos2, Color color, float thickness) {
         this.xPos1 = xPos1;
         this.yPos1 = yPos1;
@@ -37,7 +39,9 @@ public class Line implements DrawingObject {
         this.thickness = thickness;
     }
 
-    
+    /** Draw method is short due to the line only realy needing two sets of coordinates. The adjust
+    methods modify the points both vertically and horizontally, and the rotation method uses sin and cos
+    to calculate the rotation angle of the line.**/
     @Override
     public void draw(Graphics2D g2d) {
         g2d.setColor(color);
