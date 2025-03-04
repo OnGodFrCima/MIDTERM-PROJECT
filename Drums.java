@@ -36,7 +36,8 @@ sets up the width and height of the drum shape due to the numerous shapes used i
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-/** Refer to the drawing object explanation**/
+/**The shape is a composite, which necessitates the use of multiple shapes that need to be
+precisely positioned, hence the numerous parameters seen below. Other than that refer to the drawing object explanation**/
     public void draw(Graphics2D g2d){
         
         AffineTransform reset = g2d.getTransform();
