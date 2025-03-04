@@ -20,7 +20,8 @@
 
 import java.awt.*;
 
-/** Contains a set of methods used by all drawing objects. Void draw allows the manipulation of shapes in an object as well as adding
+/** Contains a set of methods used by all drawing objects. Void draw allows the manipulation of shapes in an object such as setting up the
+conditions of the shapes dimensions, as well as adding
 shapes and other manipulations of related shapes. adjustX/Y allows for the x and y values to be edited,
 similarly with adjustSize for width and height of the drawing object. getX/Y returns the x and y values of the shape
 and rotate allows said shapes to be rotated. All drawing object share these methods so I won't bother explaining this on other class files
