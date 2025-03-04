@@ -30,7 +30,7 @@ public class Background implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public Background(double xPos, double yPos, double width, double height, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
@@ -39,7 +39,8 @@ public class Background implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** Normally I would refer to the drawing object explanation, but in this case, the difference between the other
+objects is the use of Paths and words to make the exit sign. The rest is standard drawing object though**/
     public void draw(Graphics2D g2d){
 
         AffineTransform reset = g2d.getTransform();
