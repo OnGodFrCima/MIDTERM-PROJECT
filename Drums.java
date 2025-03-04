@@ -33,7 +33,7 @@ public class Drums implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** Refer to the drawing object explanation**/
     public void draw(Graphics2D g2d){
         
         AffineTransform reset = g2d.getTransform();
