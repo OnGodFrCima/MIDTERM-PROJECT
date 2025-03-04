@@ -24,7 +24,8 @@ import java.awt.geom.AffineTransform;
 
 public class Cymbal implements DrawingObject {
     private double x, y, width, height, angle;
-
+/**This constructor only takes x, y, width, and the rotation as the height is directly tied to the width due to
+the nature of the shape**/
     public Cymbal(double x, double y, double width, double angle) {
         this.x = x;
         this.y = y;
@@ -32,7 +33,8 @@ public class Cymbal implements DrawingObject {
         this.height = width / 6; 
         this.angle = angle;
     }
-
+/**Use of lines in order to draw the outline of the cymbal, then using an ellipse to fill it with color, as well as
+using Anti Aliasing to smooth out the shape better, the rest is standard drawing object.**/
     @Override
     public void draw(Graphics2D g2d) {
         AffineTransform reset = g2d.getTransform();
@@ -40,7 +42,7 @@ public class Cymbal implements DrawingObject {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.rotate(Math.toRadians(angle), x + width / 2, y + height / 2);
 
-        Circle body = new Circle(x, y + height / 6, width, height, new Color(189, 166, 120), 0); // Raised circle even higher
+        Circle body = new Circle(x, y + height / 6, width, height, new Color(189, 166, 120), 0); 
         body.draw(g2d);
 
         Line line1 = new Line(x, y + height / 2, x + width, y + height / 2, Color.BLACK, 1);
@@ -72,7 +74,7 @@ public class Cymbal implements DrawingObject {
     @Override
     public void adjustSize(double newSize) {
         this.width = newSize;
-        this.height = newSize / 6; // Keep the flatter ratio
+        this.height = newSize / 6; 
     }
 
     @Override
