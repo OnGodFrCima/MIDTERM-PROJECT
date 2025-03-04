@@ -25,7 +25,7 @@ public class HouseOutside implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public HouseOutside(double xPos, double yPos, double width, double height, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
@@ -34,7 +34,8 @@ public class HouseOutside implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+/** Numerous shapes were used to create the house, hence why parameters are very precise as the use of paths
+entails precise values to get a desired shape to form, the other methods are standard though**/
     public void draw(Graphics2D g2d){
 
         Rectangle floor = new Rectangle(94.9, 584.2, 604.7, 16.1, new Color(91, 51, 15), 0);
