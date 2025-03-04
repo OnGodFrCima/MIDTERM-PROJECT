@@ -56,6 +56,10 @@ class SceneCanvas extends JComponent {
 
     private boolean inside = true;
 
+	/** The constructor recieves the five audioplayer objects which ties them into a specific button that activates their events,
+            as well as acts as the canvas where all the drawingobjects are added. As stated in the class description, it also contains 
+	    timers which control object movements in the canvas.**/
+	
     public SceneCanvas(AudioPlayerWithButton audioPlayer1, AudioPlayerWithButton audioPlayer2, AudioPlayerWithButton audioPlayer3, AudioPlayerWithButton audioPlayer4, AudioPlayerWithButton audioPlayer5) {
         this.setPreferredSize(new Dimension(800, 600));
         this.audioPlayer1 = audioPlayer1;
@@ -300,7 +304,10 @@ class SceneCanvas extends JComponent {
 
 
         this.addMouseListener(new MouseAdapter() {
-            @Override
+            
+	/** This method consists of the clickable areas where interacting with the listener activates the corresponding
+	event tied to the audioplayer button clicked**/
+	@Override
 
             public void mouseClicked(MouseEvent e) {
                 if (e.getX() >= clickableArea1.getX() && e.getX() <= clickableArea1.getX() + 50 &&
@@ -512,7 +519,7 @@ class SceneCanvas extends JComponent {
 
         }
 
-
+/** Draws all the drawingobjects inside the arraylist onto the canvas**/
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
