@@ -20,14 +20,12 @@ public class Car implements DrawingObject {
         double windowWidth = width * 0.3;
         double windowHeight = roofHeight * 0.6;
 
-        body = new Rectangle(x + xPos, y + yPos, bodyWidth, bodyHeight, bodyColor, 0);
-        roof = new Rectangle(x + width * 0.25 + xPos, y - roofHeight + yPos ,roofWidth, roofHeight, bodyColor, 0);
-        window = new Rectangle(x + width * 0.35 + xPos, y - roofHeight + length * 0.05 + yPos, windowWidth, windowHeight, windowColor, 0);
-        wheel1 = new Circle(x + width * 0.1 + xPos, y + bodyHeight + yPos,wheelSize, wheelColor, 0);
-        wheel2 = new Circle(x + width * 0.7 + xPos, y + bodyHeight + yPos, wheelSize, wheelSize, wheelColor, 0);
-        
-        centerX = x + bodyWidth / 2;
-        centerY = y + bodyHeight / 2;
+        body = new Rectangle(0 + centerX, centerY + 530, bodyWidth, bodyHeight, bodyColor, 0);
+        roof = new Rectangle(0 + centerX + width * 0.25, centerY + 530 - roofHeight ,roofWidth, roofHeight, bodyColor, 0);
+        window = new Rectangle(0 + centerX + width * 0.35, centerY + 530 - roofHeight + length * 0.05, windowWidth, windowHeight, windowColor, 0);
+        wheel1 = new Circle(0 + centerX + width * 0.1, centerY + 530 + bodyHeight ,wheelSize, wheelSize, wheelColor,0);
+        wheel2 = new Circle(0 + centerX + width * 0.7, centerY + 530 + bodyHeight, wheelSize, wheelSize, wheelColor, 0);
+
     }
 
     @Override
@@ -48,21 +46,16 @@ public class Car implements DrawingObject {
 
     @Override
     public void adjustX(double distance) {
+        centerX += distance;
         body.adjustX(distance);
         roof.adjustX(distance);
         window.adjustX(distance);
         wheel1.adjustX(distance);
         wheel2.adjustX(distance);
-        centerX += distance;
     }
 
     @Override
     public void adjustY(double distance) {
-        body.adjustY(distance);
-        roof.adjustY(distance);
-        window.adjustY(distance);
-        wheel1.adjustY(distance);
-        wheel2.adjustY(distance);
         centerY += distance;
     }
 
@@ -97,5 +90,3 @@ public class Car implements DrawingObject {
         this.rotation += angle;
     }
 }
-
-
