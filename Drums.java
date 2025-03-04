@@ -27,6 +27,9 @@ public class Drums implements DrawingObject{
     private Color color;
     private double rotationAngle = 0;
 
+/**Unlike the usual constructors, this one only takes x , y, and the rotation of the shape, as the draw method already
+sets up the width and height of the drum shape due to the numerous shapes used in it's creation**/
+	
     public Drums(double xPos, double yPos, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
