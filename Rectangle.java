@@ -26,7 +26,7 @@ public class Rectangle implements DrawingObject {
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Collects the x , y, width, height, color, and rotation of the chosen shape**/
     public Rectangle(double xPos, double yPos, double width, double height, Color color, double rotationAngle) {
         this.xPos = xPos;
         this.yPos = yPos;
@@ -36,7 +36,7 @@ public class Rectangle implements DrawingObject {
         this.rotationAngle = rotationAngle;
     }
 
-
+/** Refer to the drawing object explanation**/
     public void draw(Graphics2D g2D) {
 
         g2D.rotate(Math.toRadians(rotationAngle), xPos + width / 2, yPos + height / 2);
