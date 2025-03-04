@@ -27,7 +27,7 @@ public class Cloud implements DrawingObject{
     private double xPos, yPos, width, height;
     private Color color;
     private double rotationAngle = 0;
-
+/** Constructor recieves the x , y, width, height, color, and rotation of the chosen shape**/
     public Cloud(double xPos, double yPos, double width, double height, double rotationAngle){
         this.xPos = xPos;
         this.yPos = yPos;
@@ -36,7 +36,7 @@ public class Cloud implements DrawingObject{
         this.color = new Color(255, 165, 0);
         this.rotationAngle = rotationAngle;
     }
-
+ /** Refer to the drawing object explanation**/
     public void draw(Graphics2D g2d){
         Circle cloud1 = new Circle(16 + xPos, 65.7 + yPos, 72.1, 72.1, new Color(255,255,255), 0);
         cloud1.draw(g2d);
