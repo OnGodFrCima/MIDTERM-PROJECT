@@ -28,7 +28,12 @@ public class Car implements DrawingObject {
     private double width, length;
     private double rotation;
     private double centerX, centerY;
-
+	
+/**Unlike the usual constructors, this one not only recieves the x, y, width, height, color, but also has
+two other colors as these colors are for other elements that are attached to the car.
+The parameters for the car are also set in the constructor instead of in the draw method, mainly
+due to finding out how to move the object**/
+	
     public Car(double x, double y, double width, double length, Color bodyColor, Color wheelColor, Color windowColor) {
         this.width = width;
         this.length = length;
@@ -48,7 +53,9 @@ public class Car implements DrawingObject {
         wheel2 = new Circle(0 + centerX + width * 0.7, centerY + 530 + bodyHeight, wheelSize, wheelSize, wheelColor, 0);
 
     }
-
+/** The parameters of the shape were set in the constructor, thus the method only draws the shapes already made in the
+constructor and sets up g2D.setTransform in order to keep the position of the shape even after a scene change. All other methods also
+changed in order to facilitate the animation of the car moving.**/
     @Override
     public void draw(Graphics2D g2D) {
         AffineTransform oldTransform = g2D.getTransform();
