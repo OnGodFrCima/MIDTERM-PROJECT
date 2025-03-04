@@ -1,4 +1,23 @@
+/**
+	Another composite shape. Multiple shapes were used to form the stage shape seen in the background class.
+    These may get shorter because I'm tired huhu (1:04am).
+    
+	
+	Ethan L. Yap (244883), Ethan Lawrence Cimafranca (241172)
+	March 05, 2025
+	
+	I have not discussed the Java language code in my program 
+	with anyone other than my instructor or the teaching assistants 
+	assigned to this course.
 
+	I have not used Java language code obtained from another student, 
+	or any other unauthorized source, either modified or unmodified.
+
+	If any Java language code or documentation used in my program 
+	was obtained from another source, such as a textbook or website, 
+	that has been clearly noted with a proper citation in the comments 
+	of my program.
+**/
 
 
 import java.awt.*;
