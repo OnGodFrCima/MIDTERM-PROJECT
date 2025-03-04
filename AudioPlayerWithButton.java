@@ -1,5 +1,7 @@
 /**
-	This is a template for a Java file.
+	This class is the Audioplayer with a button. Within this class are the properties of theAudioplayer
+        which parses through the folder for selected Audiofiles to play, which is initiated by the push
+	of the button. This is only a class file, which means it still need to be instantiated elsewhere.
 	
 	Ethan L. Yap (244883), Ethan Lawrence Cimafranca (241172)
 	March 05, 2025
