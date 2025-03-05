@@ -1,5 +1,5 @@
 /** 
-    Stage Lights that alternate colors every few seconds. 
+    Stage Lights that alternate colors every few seconds. There are 3 versions of it at the same time.
 	
 	Ethan L. Yap (244883), Ethan Lawrence Cimafranca (241172)
 	March 05, 2025
